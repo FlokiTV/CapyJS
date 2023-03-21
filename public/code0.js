@@ -69,7 +69,7 @@ gdjs.copyArray(runtimeScene.getObjects("trail"), gdjs.gameCode.GDtrailObjects1);
 
 
 };gdjs.gameCode.mapOfGDgdjs_46gameCode_46GDwallObjects1Objects = Hashtable.newFrom({"wall": gdjs.gameCode.GDwallObjects1});
-gdjs.gameCode.userFunc0x820c08 = function(runtimeScene, objects) {
+gdjs.gameCode.userFunc0x819868 = function(runtimeScene, objects) {
 "use strict";
 function angleReflect(incidenceAngle, surfaceAngle){
   const a = surfaceAngle * 2 - incidenceAngle;
@@ -90,7 +90,7 @@ gdjs.gameCode.eventsList1 = function(runtimeScene) {
 
 var objects = [];
 objects.push.apply(objects,gdjs.gameCode.GDraycastObjects1);
-gdjs.gameCode.userFunc0x820c08(runtimeScene, objects);
+gdjs.gameCode.userFunc0x819868(runtimeScene, objects);
 
 }
 
@@ -230,7 +230,7 @@ if (gdjs.gameCode.condition1IsTrue_0.val) {
 };gdjs.gameCode.mapOfGDgdjs_46gameCode_46GDwallObjects1Objects = Hashtable.newFrom({"wall": gdjs.gameCode.GDwallObjects1});
 gdjs.gameCode.mapOfGDgdjs_46gameCode_46GDwallObjects1Objects = Hashtable.newFrom({"wall": gdjs.gameCode.GDwallObjects1});
 gdjs.gameCode.mapOfGDgdjs_46gameCode_46GDplayerObjects1Objects = Hashtable.newFrom({"player": gdjs.gameCode.GDplayerObjects1});
-gdjs.gameCode.userFunc0x826de0 = function(runtimeScene, objects) {
+gdjs.gameCode.userFunc0x827548 = function(runtimeScene, objects) {
 "use strict";
 function angleReflect(incidenceAngle, surfaceAngle){
   const a = surfaceAngle * 2 - incidenceAngle;
@@ -251,7 +251,7 @@ gdjs.gameCode.eventsList6 = function(runtimeScene) {
 
 var objects = [];
 objects.push.apply(objects,gdjs.gameCode.GDplayerObjects1);
-gdjs.gameCode.userFunc0x826de0(runtimeScene, objects);
+gdjs.gameCode.userFunc0x827548(runtimeScene, objects);
 
 }
 

@@ -310,6 +310,13 @@ gdjs.onlineCode.eventsList2(runtimeScene);} //Subevents end.
 
 {
 
+
+
+}
+
+
+{
+
 gdjs.copyArray(runtimeScene.getObjects("player"), gdjs.onlineCode.GDplayerObjects1);
 
 for(gdjs.onlineCode.forEachIndex2 = 0;gdjs.onlineCode.forEachIndex2 < gdjs.onlineCode.GDplayerObjects1.length;++gdjs.onlineCode.forEachIndex2) {
@@ -340,7 +347,7 @@ gdjs.onlineCode.condition0IsTrue_0.val = false;
 {
 gdjs.onlineCode.condition0IsTrue_0.val = gdjs.evtsExt__GeckosClient__onEvent.func(runtimeScene, "ping", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }if (gdjs.onlineCode.condition0IsTrue_0.val) {
-{gdjs.evtsExt__GeckosClient__emit.func(runtimeScene, "ping", gdjs.evtsExt__GeckosClient__eventData.func(runtimeScene, "ping", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+{gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getScene().getVariables().get("ping"), true);
 }}
 
 }
@@ -566,13 +573,6 @@ gdjs.onlineCode.eventsList7(runtimeScene);} //End of subevents
 {
 
 
-
-}
-
-
-{
-
-
 {
 gdjs.copyArray(runtimeScene.getObjects("player"), gdjs.onlineCode.GDplayerObjects1);
 {for(var i = 0, len = gdjs.onlineCode.GDplayerObjects1.length ;i < len;++i) {
@@ -584,6 +584,20 @@ gdjs.copyArray(runtimeScene.getObjects("player"), gdjs.onlineCode.GDplayerObject
 }{for(var i = 0, len = gdjs.onlineCode.GDplayerObjects1.length ;i < len;++i) {
     gdjs.onlineCode.GDplayerObjects1[i].setCenterYInScene(gdjs.evtTools.common.lerp((gdjs.onlineCode.GDplayerObjects1[i].getCenterYInScene()), (gdjs.RuntimeObject.getVariableNumber(gdjs.onlineCode.GDplayerObjects1[i].getVariables().get("y"))), 0.1));
 }
+}}
+
+}
+
+
+{
+
+
+gdjs.onlineCode.condition0IsTrue_0.val = false;
+{
+gdjs.onlineCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getScene().getVariables().get("ping"), true);
+}if (gdjs.onlineCode.condition0IsTrue_0.val) {
+{gdjs.evtsExt__GeckosClient__emit.func(runtimeScene, "ping", gdjs.evtsExt__GeckosClient__eventData.func(runtimeScene, "ping", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}{gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getScene().getVariables().get("ping"), false);
 }}
 
 }

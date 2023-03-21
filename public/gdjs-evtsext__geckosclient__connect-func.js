@@ -11,7 +11,7 @@ gdjs.evtsExt__GeckosClient__connect.conditionTrue_0 = {val:false};
 gdjs.evtsExt__GeckosClient__connect.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__GeckosClient__connect.userFunc0x75c8e0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__GeckosClient__connect.userFunc0x7d6270 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 /**
  * start geckos client with these options
@@ -75,12 +75,34 @@ channel.onConnect(error => {
 //   channel.close()
 // })
 };
+gdjs.evtsExt__GeckosClient__connect.userFunc0x8285a0 = function(runtimeScene, eventsFunctionContext) {
+"use strict";
+gdjs.isTabActive = true
+
+window.onfocus = function () { 
+  gdjs.isTabActive = true; 
+}; 
+
+window.onblur = function () { 
+  gdjs.isTabActive = false; 
+}; 
+
+
+};
 gdjs.evtsExt__GeckosClient__connect.eventsList0 = function(runtimeScene, eventsFunctionContext) {
 
 {
 
 
-gdjs.evtsExt__GeckosClient__connect.userFunc0x75c8e0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__GeckosClient__connect.userFunc0x7d6270(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+
+}
+
+
+{
+
+
+gdjs.evtsExt__GeckosClient__connect.userFunc0x8285a0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

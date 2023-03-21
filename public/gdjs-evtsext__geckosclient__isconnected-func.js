@@ -11,7 +11,7 @@ gdjs.evtsExt__GeckosClient__isConnected.conditionTrue_0 = {val:false};
 gdjs.evtsExt__GeckosClient__isConnected.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__GeckosClient__isConnected.userFunc0x75c8e0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__GeckosClient__isConnected.userFunc0x72eef8 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 eventsFunctionContext.returnValue = gdjs._geckosClient.isConnected || false;
 };
@@ -20,7 +20,7 @@ gdjs.evtsExt__GeckosClient__isConnected.eventsList0 = function(runtimeScene, eve
 {
 
 
-gdjs.evtsExt__GeckosClient__isConnected.userFunc0x75c8e0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__GeckosClient__isConnected.userFunc0x72eef8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

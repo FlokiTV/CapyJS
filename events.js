@@ -33,7 +33,10 @@ export function sync(data = "", channel, io) {
 export function move(data, channel, io) {
   let player = Players.get(channel.id);
   let [x, y] = data.split(":");
-  player.x += Number(x);
-  player.y += Number(y);
+  x = Number(x);
+  y = Number(y);
+  if (x) player.x += x > 1 ? 1 : -1;
+  if (y) player.y += y > 1 ? 1 : -1;
+  
   Players.set(channel.id, player);
 }
