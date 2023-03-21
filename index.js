@@ -1,6 +1,7 @@
 import { ServerClock } from "./lib/serverClock.js";
 import { instance } from "./lib/geckosServer.js";
 import * as events from "./events.js";
+import * as express from "express";
 
 const io = instance(3000);
 const tick = new ServerClock(24, true);
@@ -28,4 +29,11 @@ io.onConnection((channel) => {
 
 tick.onTick((delta) => {
   events.onTick(delta, io);
+});
+
+const app = express();
+const port = 80;
+app.use(express.static("public"));
+app.listen(port, () => {
+  console.log(`app listening on port ${port}`);
 });
