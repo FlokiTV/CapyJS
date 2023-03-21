@@ -1,7 +1,7 @@
 import { ServerClock } from "./lib/serverClock.js";
 import { instance } from "./lib/geckosServer.js";
 import * as events from "./events.js";
-import * as express from "express";
+import express from 'express';
 
 const io = instance(3000);
 const tick = new ServerClock(24, true);
