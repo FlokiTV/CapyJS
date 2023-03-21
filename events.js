@@ -35,8 +35,8 @@ export function move(data, channel, io) {
   let [x, y] = data.split(":");
   x = Number(x);
   y = Number(y);
-  if (x) player.x += x > 1 ? 1 : -1;
-  if (y) player.y += y > 1 ? 1 : -1;
-  
+  if (x) player.x += x > 0 ? 1 : -1;
+  if (y) player.y += y > 0 ? 1 : -1;
+
   Players.set(channel.id, player);
 }
