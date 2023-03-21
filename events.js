@@ -6,6 +6,7 @@ export function onConnection(channel, io) {
     x: 0,
     y: 0,
   });
+  channel.emit("ping", Date.now());
 }
 export function onDisconnect(channel, io) {
   console.log(`${channel.id} got disconnected`);
@@ -15,7 +16,7 @@ export function onDisconnect(channel, io) {
   Tick Event
 */
 export function onTick(delta, io) {
-  io.emit("ping", Date.now());
+  // io.emit("ping", Date.now());
   const json = JSON.stringify(Object.fromEntries(Players));
   io.emit("sync:players", json);
 }
@@ -25,6 +26,7 @@ export function onTick(delta, io) {
 export function ping(data, channel, io) {
   let ms = Date.now() - data;
   channel.emit("pong", ms);
+  channel.emit("ping", Date.now());
 }
 export function sync(data = "", channel, io) {
   const json = JSON.stringify(Object.fromEntries(Players));
