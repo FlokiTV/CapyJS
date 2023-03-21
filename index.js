@@ -3,7 +3,7 @@ import { instance } from "./lib/geckosServer.js";
 import * as events from "./events.js";
 
 const io = instance(3000);
-const tick = new ServerClock(60, true);
+const tick = new ServerClock(24, true);
 
 io.onConnection((channel) => {
   channel.onDisconnect(() => {
@@ -18,4 +18,6 @@ io.onConnection((channel) => {
   }
 });
 
-tick.onTick((delta) => {});
+tick.onTick((delta) => {
+    io.emit("ping", Date.now());
+});
