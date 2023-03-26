@@ -11,7 +11,7 @@ gdjs.evtsExt__Essentials__onFirstSceneLoaded.conditionTrue_0 = {val:false};
 gdjs.evtsExt__Essentials__onFirstSceneLoaded.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__Essentials__onFirstSceneLoaded.userFunc0x72eef8 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Essentials__onFirstSceneLoaded.userFunc0x8e1088 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 gdjs._es = {}
 
@@ -36,7 +36,7 @@ gdjs.evtsExt__Essentials__onFirstSceneLoaded.eventsList0 = function(runtimeScene
 {
 
 
-gdjs.evtsExt__Essentials__onFirstSceneLoaded.userFunc0x72eef8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Essentials__onFirstSceneLoaded.userFunc0x8e1088(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

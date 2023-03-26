@@ -1,33 +1,35 @@
 
-if (typeof gdjs.evtsExt__GeckosClient__getID !== "undefined") {
-  gdjs.evtsExt__GeckosClient__getID.registeredGdjsCallbacks.forEach(callback =>
+if (typeof gdjs.evtsExt__DevToolkit__showPanel !== "undefined") {
+  gdjs.evtsExt__DevToolkit__showPanel.registeredGdjsCallbacks.forEach(callback =>
     gdjs._unregisterCallback(callback)
   );
 }
 
-gdjs.evtsExt__GeckosClient__getID = {};
+gdjs.evtsExt__DevToolkit__showPanel = {};
 
-gdjs.evtsExt__GeckosClient__getID.conditionTrue_0 = {val:false};
-gdjs.evtsExt__GeckosClient__getID.condition0IsTrue_0 = {val:false};
+gdjs.evtsExt__DevToolkit__showPanel.conditionTrue_0 = {val:false};
+gdjs.evtsExt__DevToolkit__showPanel.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__GeckosClient__getID.userFunc0x8b9498 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__showPanel.userFunc0x8ab2b0 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
-eventsFunctionContext.returnValue = gdjs._geckosClient.channel.id
+let show = eventsFunctionContext.getArgument("Show")
+gdjs._GameStats.show(show)
+    
 };
-gdjs.evtsExt__GeckosClient__getID.eventsList0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__showPanel.eventsList0 = function(runtimeScene, eventsFunctionContext) {
 
 {
 
 
-gdjs.evtsExt__GeckosClient__getID.userFunc0x8b9498(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__DevToolkit__showPanel.userFunc0x8ab2b0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
 
 };
 
-gdjs.evtsExt__GeckosClient__getID.func = function(runtimeScene, parentEventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__showPanel.func = function(runtimeScene, Show, parentEventsFunctionContext) {
 var eventsFunctionContext = {
   _objectsMap: {
 },
@@ -72,15 +74,16 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
     return runtimeScene.getLayer(layerName);
   },
   getArgument: function(argName) {
+if (argName === "Show") return Show;
     return "";
   },
   getOnceTriggers: function() { return runtimeScene.getOnceTriggers(); }
 };
 
 
-gdjs.evtsExt__GeckosClient__getID.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__DevToolkit__showPanel.eventsList0(runtimeScene, eventsFunctionContext);
 
-return "" + eventsFunctionContext.returnValue;
+return;
 }
 
-gdjs.evtsExt__GeckosClient__getID.registeredGdjsCallbacks = [];
+gdjs.evtsExt__DevToolkit__showPanel.registeredGdjsCallbacks = [];

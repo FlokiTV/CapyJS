@@ -1,33 +1,52 @@
 
-if (typeof gdjs.evtsExt__GeckosClient__getID !== "undefined") {
-  gdjs.evtsExt__GeckosClient__getID.registeredGdjsCallbacks.forEach(callback =>
+if (typeof gdjs.evtsExt__DevToolkit__init !== "undefined") {
+  gdjs.evtsExt__DevToolkit__init.registeredGdjsCallbacks.forEach(callback =>
     gdjs._unregisterCallback(callback)
   );
 }
 
-gdjs.evtsExt__GeckosClient__getID = {};
+gdjs.evtsExt__DevToolkit__init = {};
 
-gdjs.evtsExt__GeckosClient__getID.conditionTrue_0 = {val:false};
-gdjs.evtsExt__GeckosClient__getID.condition0IsTrue_0 = {val:false};
+gdjs.evtsExt__DevToolkit__init.conditionTrue_0 = {val:false};
+gdjs.evtsExt__DevToolkit__init.condition0IsTrue_0 = {val:false};
+gdjs.evtsExt__DevToolkit__init.condition1IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__GeckosClient__getID.userFunc0x8b9498 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__init.userFunc0x8a0b00 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
-eventsFunctionContext.returnValue = gdjs._geckosClient.channel.id
+if(gdjs._vstats.isLoad) 
+    gdjs._vstats.app.logs = []
 };
-gdjs.evtsExt__GeckosClient__getID.eventsList0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__init.eventsList0 = function(runtimeScene, eventsFunctionContext) {
 
 {
 
 
-gdjs.evtsExt__GeckosClient__getID.userFunc0x8b9498(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__DevToolkit__init.userFunc0x8a0b00(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+
+}
+
+
+};gdjs.evtsExt__DevToolkit__init.eventsList1 = function(runtimeScene, eventsFunctionContext) {
+
+{
+
+
+gdjs.evtsExt__DevToolkit__init.condition0IsTrue_0.val = false;
+{
+gdjs.evtsExt__DevToolkit__init.condition0IsTrue_0.val = gdjs.evtsExt__DevToolkit__triggerCommand.func(runtimeScene, "clear", "", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}if (gdjs.evtsExt__DevToolkit__init.condition0IsTrue_0.val) {
+
+{ //Subevents
+gdjs.evtsExt__DevToolkit__init.eventsList0(runtimeScene, eventsFunctionContext);} //End of subevents
+}
 
 }
 
 
 };
 
-gdjs.evtsExt__GeckosClient__getID.func = function(runtimeScene, parentEventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__init.func = function(runtimeScene, parentEventsFunctionContext) {
 var eventsFunctionContext = {
   _objectsMap: {
 },
@@ -78,9 +97,9 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
 };
 
 
-gdjs.evtsExt__GeckosClient__getID.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__DevToolkit__init.eventsList1(runtimeScene, eventsFunctionContext);
 
-return "" + eventsFunctionContext.returnValue;
+return;
 }
 
-gdjs.evtsExt__GeckosClient__getID.registeredGdjsCallbacks = [];
+gdjs.evtsExt__DevToolkit__init.registeredGdjsCallbacks = [];

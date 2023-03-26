@@ -11,7 +11,7 @@ gdjs.evtsExt__GeckosClient__connect.conditionTrue_0 = {val:false};
 gdjs.evtsExt__GeckosClient__connect.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__GeckosClient__connect.userFunc0x7d6270 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__GeckosClient__connect.userFunc0x8b9498 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 /**
  * start geckos client with these options
@@ -27,6 +27,9 @@ const channel = gdjs._geckos({
   url: dev ? "http://127.0.0.1" : url,
   port: 3000
 }) // default port is 9208
+const log = (...data) => {
+  if (dev) console.log(...data)
+}
 const maxMessages = 5
 gdjs._geckosClient = {
   channel,
@@ -41,13 +44,18 @@ gdjs._geckosClient = {
     let value = gdjs._geckosClient.events[event].shift();
     if (!value) return false;
     gdjs._geckosClient.lastValues[event] = value;
-    return value;
+    return true;
+  },
+  hasEvent(event) {
+    return event in gdjs._geckosClient.events
   },
   register(event) {
+    log("register " + event);
     gdjs._geckosClient.events[event] = [];
     gdjs._geckosClient.channel.on(event, data => {
       gdjs._geckosClient.events[event].push(data);
-      if (gdjs._geckosClient.events[event].lenght > maxMessages) {
+      if (gdjs._geckosClient.events[event].length > maxMessages) {
+        log("shift")
         gdjs._geckosClient.events[event].shift();
       }
     })
@@ -75,7 +83,7 @@ channel.onConnect(error => {
 //   channel.close()
 // })
 };
-gdjs.evtsExt__GeckosClient__connect.userFunc0x8285a0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__GeckosClient__connect.userFunc0x8e1088 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 gdjs.isTabActive = true
 
@@ -94,7 +102,7 @@ gdjs.evtsExt__GeckosClient__connect.eventsList0 = function(runtimeScene, eventsF
 {
 
 
-gdjs.evtsExt__GeckosClient__connect.userFunc0x7d6270(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__GeckosClient__connect.userFunc0x8b9498(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -102,7 +110,7 @@ gdjs.evtsExt__GeckosClient__connect.userFunc0x7d6270(runtimeScene, typeof events
 {
 
 
-gdjs.evtsExt__GeckosClient__connect.userFunc0x8285a0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__GeckosClient__connect.userFunc0x8e1088(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

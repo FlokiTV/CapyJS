@@ -1,33 +1,31 @@
 
-if (typeof gdjs.evtsExt__GeckosClient__getID !== "undefined") {
-  gdjs.evtsExt__GeckosClient__getID.registeredGdjsCallbacks.forEach(callback =>
+if (typeof gdjs.evtsExt__DevToolkit__onSceneLoaded !== "undefined") {
+  gdjs.evtsExt__DevToolkit__onSceneLoaded.registeredGdjsCallbacks.forEach(callback =>
     gdjs._unregisterCallback(callback)
   );
 }
 
-gdjs.evtsExt__GeckosClient__getID = {};
+gdjs.evtsExt__DevToolkit__onSceneLoaded = {};
 
-gdjs.evtsExt__GeckosClient__getID.conditionTrue_0 = {val:false};
-gdjs.evtsExt__GeckosClient__getID.condition0IsTrue_0 = {val:false};
+gdjs.evtsExt__DevToolkit__onSceneLoaded.conditionTrue_0 = {val:false};
+gdjs.evtsExt__DevToolkit__onSceneLoaded.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__GeckosClient__getID.userFunc0x8b9498 = function(runtimeScene, eventsFunctionContext) {
-"use strict";
-eventsFunctionContext.returnValue = gdjs._geckosClient.channel.id
-};
-gdjs.evtsExt__GeckosClient__getID.eventsList0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__onSceneLoaded.eventsList0 = function(runtimeScene, eventsFunctionContext) {
 
 {
 
 
-gdjs.evtsExt__GeckosClient__getID.userFunc0x8b9498(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+{
+{gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, "STATS");
+}}
 
 }
 
 
 };
 
-gdjs.evtsExt__GeckosClient__getID.func = function(runtimeScene, parentEventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__onSceneLoaded.func = function(runtimeScene, parentEventsFunctionContext) {
 var eventsFunctionContext = {
   _objectsMap: {
 },
@@ -78,9 +76,13 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
 };
 
 
-gdjs.evtsExt__GeckosClient__getID.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__DevToolkit__onSceneLoaded.eventsList0(runtimeScene, eventsFunctionContext);
 
-return "" + eventsFunctionContext.returnValue;
+return;
 }
 
-gdjs.evtsExt__GeckosClient__getID.registeredGdjsCallbacks = [];
+gdjs.evtsExt__DevToolkit__onSceneLoaded.registeredGdjsCallbacks = [];
+gdjs.evtsExt__DevToolkit__onSceneLoaded.registeredGdjsCallbacks.push((runtimeScene) => {
+    gdjs.evtsExt__DevToolkit__onSceneLoaded.func(runtimeScene, runtimeScene);
+})
+gdjs.registerRuntimeSceneLoadedCallback(gdjs.evtsExt__DevToolkit__onSceneLoaded.registeredGdjsCallbacks[gdjs.evtsExt__DevToolkit__onSceneLoaded.registeredGdjsCallbacks.length - 1]);
