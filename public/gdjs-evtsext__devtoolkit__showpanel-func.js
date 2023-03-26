@@ -11,7 +11,7 @@ gdjs.evtsExt__DevToolkit__showPanel.conditionTrue_0 = {val:false};
 gdjs.evtsExt__DevToolkit__showPanel.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__DevToolkit__showPanel.userFunc0x75edd8 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__showPanel.userFunc0x8a7c50 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 let show = eventsFunctionContext.getArgument("Show")
 gdjs._GameStats.show(show)
@@ -22,7 +22,7 @@ gdjs.evtsExt__DevToolkit__showPanel.eventsList0 = function(runtimeScene, eventsF
 {
 
 
-gdjs.evtsExt__DevToolkit__showPanel.userFunc0x75edd8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__DevToolkit__showPanel.userFunc0x8a7c50(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

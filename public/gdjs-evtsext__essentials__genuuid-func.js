@@ -11,7 +11,7 @@ gdjs.evtsExt__Essentials__genUUID.conditionTrue_0 = {val:false};
 gdjs.evtsExt__Essentials__genUUID.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__Essentials__genUUID.userFunc0x82dd38 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Essentials__genUUID.userFunc0x75eb38 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 let uuid = ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
@@ -23,7 +23,7 @@ gdjs.evtsExt__Essentials__genUUID.eventsList0 = function(runtimeScene, eventsFun
 {
 
 
-gdjs.evtsExt__Essentials__genUUID.userFunc0x82dd38(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Essentials__genUUID.userFunc0x75eb38(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

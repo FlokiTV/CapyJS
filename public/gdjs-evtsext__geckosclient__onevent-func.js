@@ -11,7 +11,7 @@ gdjs.evtsExt__GeckosClient__onEvent.conditionTrue_0 = {val:false};
 gdjs.evtsExt__GeckosClient__onEvent.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__GeckosClient__onEvent.userFunc0x805280 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__GeckosClient__onEvent.userFunc0x800470 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 let event = eventsFunctionContext.getArgument("eventName");
 if(!gdjs._geckosClient.hasEvent(event)) gdjs._geckosClient.register(event)
@@ -23,7 +23,7 @@ gdjs.evtsExt__GeckosClient__onEvent.eventsList0 = function(runtimeScene, eventsF
 {
 
 
-gdjs.evtsExt__GeckosClient__onEvent.userFunc0x805280(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__GeckosClient__onEvent.userFunc0x800470(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

@@ -12,7 +12,7 @@ gdjs.evtsExt__DevToolkit__init.condition0IsTrue_0 = {val:false};
 gdjs.evtsExt__DevToolkit__init.condition1IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__DevToolkit__init.userFunc0x88da78 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__init.userFunc0x80c110 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 if(gdjs._vstats.isLoad) 
     gdjs._vstats.app.logs = []
@@ -22,7 +22,7 @@ gdjs.evtsExt__DevToolkit__init.eventsList0 = function(runtimeScene, eventsFuncti
 {
 
 
-gdjs.evtsExt__DevToolkit__init.userFunc0x88da78(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__DevToolkit__init.userFunc0x80c110(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

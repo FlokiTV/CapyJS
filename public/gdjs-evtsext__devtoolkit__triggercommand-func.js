@@ -11,7 +11,7 @@ gdjs.evtsExt__DevToolkit__triggerCommand.conditionTrue_0 = {val:false};
 gdjs.evtsExt__DevToolkit__triggerCommand.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__DevToolkit__triggerCommand.userFunc0x89e310 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__triggerCommand.userFunc0x887740 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 let cmd = eventsFunctionContext.getArgument("Command")
 let log = eventsFunctionContext.getArgument("Log")
@@ -29,7 +29,7 @@ gdjs.evtsExt__DevToolkit__triggerCommand.eventsList0 = function(runtimeScene, ev
 {
 
 
-gdjs.evtsExt__DevToolkit__triggerCommand.userFunc0x89e310(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__DevToolkit__triggerCommand.userFunc0x887740(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

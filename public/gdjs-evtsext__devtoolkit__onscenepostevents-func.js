@@ -12,12 +12,12 @@ gdjs.evtsExt__DevToolkit__onScenePostEvents.condition0IsTrue_0 = {val:false};
 gdjs.evtsExt__DevToolkit__onScenePostEvents.condition1IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__DevToolkit__onScenePostEvents.userFunc0x8a4b30 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__onScenePostEvents.userFunc0x80c110 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 let stats = gdjs._GameStats
 stats.end()
 };
-gdjs.evtsExt__DevToolkit__onScenePostEvents.userFunc0x75edd8 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__onScenePostEvents.userFunc0x83e100 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 if(gdjs._vstats.isLoad)
     gdjs._vstats.app.update()
@@ -27,7 +27,7 @@ gdjs.evtsExt__DevToolkit__onScenePostEvents.eventsList0 = function(runtimeScene,
 {
 
 
-gdjs.evtsExt__DevToolkit__onScenePostEvents.userFunc0x75edd8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__DevToolkit__onScenePostEvents.userFunc0x83e100(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -47,7 +47,7 @@ gdjs.evtsExt__DevToolkit__onScenePostEvents.userFunc0x75edd8(runtimeScene, typeo
 {
 
 
-gdjs.evtsExt__DevToolkit__onScenePostEvents.userFunc0x8a4b30(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__DevToolkit__onScenePostEvents.userFunc0x80c110(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

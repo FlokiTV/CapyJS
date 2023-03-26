@@ -11,7 +11,7 @@ gdjs.evtsExt__Essentials__getObjectCenterXByUUID.conditionTrue_0 = {val:false};
 gdjs.evtsExt__Essentials__getObjectCenterXByUUID.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__Essentials__getObjectCenterXByUUID.userFunc0x82dd38 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Essentials__getObjectCenterXByUUID.userFunc0x75eb38 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 let uuid = eventsFunctionContext.getArgument("UUID")
 if(!gdjs._uuid.getObject(uuid)) eventsFunctionContext.returnValue = 0
@@ -22,7 +22,7 @@ gdjs.evtsExt__Essentials__getObjectCenterXByUUID.eventsList0 = function(runtimeS
 {
 
 
-gdjs.evtsExt__Essentials__getObjectCenterXByUUID.userFunc0x82dd38(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Essentials__getObjectCenterXByUUID.userFunc0x75eb38(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

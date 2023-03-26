@@ -1,4 +1,8 @@
 const Players = new Map();
+const Variable = new Map();
+
+Variable.set("speed", 20)
+
 export function onConnection(channel, io) {
   console.log(`${channel.id} connected`);
   Players.set(channel.id, {
@@ -23,7 +27,7 @@ export function onTick(delta, io) {
   */
   for (let playerId in Object.fromEntries(Players)) {
     let player = Players.get(playerId);
-    let speed = 10;
+    let speed = Variable.get("speed");
     let x = player.xAxis;
     let y = player.yAxis;
     if (x) player.x += (x > 0 ? 1 : -1) * delta * speed;
@@ -36,7 +40,7 @@ export function onTick(delta, io) {
 export function ping(data, channel, io) {
   let ms = Date.now() - data;
   channel.emit("pong", ms); //send back the ping
-  channel.emit("ping", Date.now(), { reliable: true }); //send a new ping request
+  channel.emit("ping", Date.now()); //send a new ping request
 }
 
 // export function sync(data = "", channel, io) {
