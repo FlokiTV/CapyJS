@@ -15,7 +15,7 @@ gdjs.evtsExt__DevToolkit__addPanel.condition0IsTrue_1 = {val:false};
 gdjs.evtsExt__DevToolkit__addPanel.condition1IsTrue_1 = {val:false};
 
 
-gdjs.evtsExt__DevToolkit__addPanel.userFunc0x8e1088 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__addPanel.userFunc0x75edd8 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 let add = setInterval(()=>{
     if(gdjs._vstats.isLoad){
@@ -32,7 +32,7 @@ gdjs.evtsExt__DevToolkit__addPanel.eventsList0 = function(runtimeScene, eventsFu
 {
 
 
-gdjs.evtsExt__DevToolkit__addPanel.userFunc0x8e1088(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__DevToolkit__addPanel.userFunc0x75edd8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

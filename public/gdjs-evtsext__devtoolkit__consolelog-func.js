@@ -11,7 +11,7 @@ gdjs.evtsExt__DevToolkit__ConsoleLog.conditionTrue_0 = {val:false};
 gdjs.evtsExt__DevToolkit__ConsoleLog.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__DevToolkit__ConsoleLog.userFunc0x8e1088 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__ConsoleLog.userFunc0x89e310 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 let log = eventsFunctionContext.getArgument("Log")
 if(gdjs._vstats.isLoad) 
@@ -26,7 +26,7 @@ gdjs.evtsExt__DevToolkit__ConsoleLog.eventsList0 = function(runtimeScene, events
 {
 
 
-gdjs.evtsExt__DevToolkit__ConsoleLog.userFunc0x8e1088(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__DevToolkit__ConsoleLog.userFunc0x89e310(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

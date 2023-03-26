@@ -36,7 +36,7 @@ export function onTick(delta, io) {
 export function ping(data, channel, io) {
   let ms = Date.now() - data;
   channel.emit("pong", ms); //send back the ping
-  channel.emit("ping", Date.now()); //send a new ping request
+  channel.emit("ping", Date.now(), { reliable: true }); //send a new ping request
 }
 
 // export function sync(data = "", channel, io) {

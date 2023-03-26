@@ -11,7 +11,7 @@ gdjs.evtsExt__Essentials___getObjectByUUID.conditionTrue_0 = {val:false};
 gdjs.evtsExt__Essentials___getObjectByUUID.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__Essentials___getObjectByUUID.userFunc0x8e1088 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Essentials___getObjectByUUID.userFunc0x8b9358 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 let uuid = eventsFunctionContext.getArgument("UUID")
 eventsFunctionContext.returnValue = gdjs._es.uuid.getObject(uuid)
@@ -22,7 +22,7 @@ gdjs.evtsExt__Essentials___getObjectByUUID.eventsList0 = function(runtimeScene, 
 {
 
 
-gdjs.evtsExt__Essentials___getObjectByUUID.userFunc0x8e1088(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Essentials___getObjectByUUID.userFunc0x8b9358(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

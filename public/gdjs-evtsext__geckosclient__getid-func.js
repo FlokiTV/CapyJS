@@ -11,7 +11,7 @@ gdjs.evtsExt__GeckosClient__getID.conditionTrue_0 = {val:false};
 gdjs.evtsExt__GeckosClient__getID.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__GeckosClient__getID.userFunc0x8b9498 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__GeckosClient__getID.userFunc0x82dd38 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 eventsFunctionContext.returnValue = gdjs._geckosClient.channel.id
 };
@@ -20,7 +20,7 @@ gdjs.evtsExt__GeckosClient__getID.eventsList0 = function(runtimeScene, eventsFun
 {
 
 
-gdjs.evtsExt__GeckosClient__getID.userFunc0x8b9498(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__GeckosClient__getID.userFunc0x82dd38(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

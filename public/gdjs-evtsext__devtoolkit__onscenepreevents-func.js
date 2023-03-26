@@ -11,7 +11,7 @@ gdjs.evtsExt__DevToolkit__onScenePreEvents.conditionTrue_0 = {val:false};
 gdjs.evtsExt__DevToolkit__onScenePreEvents.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__DevToolkit__onScenePreEvents.userFunc0x8e1088 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__DevToolkit__onScenePreEvents.userFunc0x8a4b30 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 let stats = gdjs._GameStats
 if(false && stats.labels.fps){ //try to reload stats if fps = infinity
@@ -33,7 +33,7 @@ gdjs.evtsExt__DevToolkit__onScenePreEvents.eventsList0 = function(runtimeScene, 
 {
 
 
-gdjs.evtsExt__DevToolkit__onScenePreEvents.userFunc0x8e1088(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__DevToolkit__onScenePreEvents.userFunc0x8a4b30(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

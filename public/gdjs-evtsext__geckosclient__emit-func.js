@@ -11,19 +11,18 @@ gdjs.evtsExt__GeckosClient__emit.conditionTrue_0 = {val:false};
 gdjs.evtsExt__GeckosClient__emit.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__GeckosClient__emit.userFunc0x8b9498 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__GeckosClient__emit.userFunc0x88bd10 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 let event = eventsFunctionContext.getArgument("eventName");
 let value = eventsFunctionContext.getArgument("eventValue");
 gdjs._geckosClient.channel.emit(event, value);
-
 };
 gdjs.evtsExt__GeckosClient__emit.eventsList0 = function(runtimeScene, eventsFunctionContext) {
 
 {
 
 
-gdjs.evtsExt__GeckosClient__emit.userFunc0x8b9498(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__GeckosClient__emit.userFunc0x88bd10(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

@@ -11,7 +11,7 @@ gdjs.evtsExt__GeckosClient__connect.conditionTrue_0 = {val:false};
 gdjs.evtsExt__GeckosClient__connect.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__GeckosClient__connect.userFunc0x8b9498 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__GeckosClient__connect.userFunc0x8aa170 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 /**
  * start geckos client with these options
@@ -69,6 +69,11 @@ channel.onConnect(error => {
     gdjs._geckosClient.isConnected = false;
     return;
   }
+  // listens for a disconnection
+  channel.onDisconnect(() => {
+    console.log("onDisconnect")
+    gdjs._geckosClient.isConnected = false;
+  })
 })
 
 // channel.onConnect(error => {
@@ -83,7 +88,7 @@ channel.onConnect(error => {
 //   channel.close()
 // })
 };
-gdjs.evtsExt__GeckosClient__connect.userFunc0x8e1088 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__GeckosClient__connect.userFunc0x773f38 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 gdjs.isTabActive = true
 
@@ -102,7 +107,7 @@ gdjs.evtsExt__GeckosClient__connect.eventsList0 = function(runtimeScene, eventsF
 {
 
 
-gdjs.evtsExt__GeckosClient__connect.userFunc0x8b9498(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__GeckosClient__connect.userFunc0x8aa170(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -110,7 +115,7 @@ gdjs.evtsExt__GeckosClient__connect.userFunc0x8b9498(runtimeScene, typeof events
 {
 
 
-gdjs.evtsExt__GeckosClient__connect.userFunc0x8e1088(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__GeckosClient__connect.userFunc0x773f38(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

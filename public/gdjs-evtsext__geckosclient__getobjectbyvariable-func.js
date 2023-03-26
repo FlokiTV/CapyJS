@@ -12,7 +12,7 @@ gdjs.evtsExt__GeckosClient__getObjectByVariable.conditionTrue_0 = {val:false};
 gdjs.evtsExt__GeckosClient__getObjectByVariable.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__GeckosClient__getObjectByVariable.userFunc0x8b9498 = function(runtimeScene, objects, eventsFunctionContext) {
+gdjs.evtsExt__GeckosClient__getObjectByVariable.userFunc0x88bd10 = function(runtimeScene, objects, eventsFunctionContext) {
 "use strict";
 let varName = eventsFunctionContext.getArgument("varName")
 let varValue = eventsFunctionContext.getArgument("varValue")
@@ -43,7 +43,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("objects"), gdjs.evtsExt__Geckos
 
 var objects = [];
 objects.push.apply(objects,gdjs.evtsExt__GeckosClient__getObjectByVariable.GDobjectsObjects1);
-gdjs.evtsExt__GeckosClient__getObjectByVariable.userFunc0x8b9498(runtimeScene, objects, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__GeckosClient__getObjectByVariable.userFunc0x88bd10(runtimeScene, objects, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
