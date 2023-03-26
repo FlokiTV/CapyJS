@@ -4,7 +4,10 @@ import * as events from "./events.js";
 import express from 'express';
 
 const io = instance(3000);
-const tick = new ServerClock(24, true);
+const tick = new ServerClock(30, true);
+const game = {}
+global["game"] = game
+game.tick = tick
 
 function registerEventCallback(event, channel) {
   if (event === "onConnection") return;
