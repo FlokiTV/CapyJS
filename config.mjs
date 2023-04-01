@@ -1,6 +1,6 @@
 const Config = {
   adapter: {
-    path: "./adapters/geckos.js",
+    path: "./adapters/geckos/index.js",
     options: {
       port: 3000,
     },

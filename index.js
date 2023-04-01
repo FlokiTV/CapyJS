@@ -3,7 +3,7 @@ import { $Manager } from "./src/index.js";
 const $ = new $Manager();
 
 $.onload(() => {
-  console.log("Server ready");
+  console.log("[capy:manager] server ready");
 });
 
 export const $Server = $.server;

@@ -1,24 +1,24 @@
 {
-  "name": "server",
-  "version": "1.0.0",
+  "name": "capy-js",
+  "version": "0.0.1",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
     "build": "esbuild index.js --bundle --minify --platform=node --format=cjs --loader:.node=copy --outdir=dist",
-    "build:adapter": "esbuild adapters/geckos.js --bundle --minify --platform=node --format=cjs --loader:.node=copy --outdir=dist/adapters/",
+    "build:adapter": "esbuild adapters/geckos/index.js --bundle --minify --platform=node --format=cjs --loader:.node=copy --outdir=dist/adapters/geckos",
     "types": "npx -p typescript tsc index.js --declaration --allowJs --emitDeclarationOnly --outDir types",
-    "docs":"jsdoc src/adapters.js src/manager.js src/state.js src/ticker.js -d docs"
+    "docs": "jsdoc src/adapters.js src/manager.js src/state.js src/ticker.js -d docs"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "multiplayer"
+  ],
+  "author": "FlokiTV",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@geckos.io/server": "^2.3.0",
     "@gullerya/object-observer": "^6.1.1",
-    "express": "^4.18.2",
     "lodash-es": "^4.17.21",
     "nodemon": "^2.0.22"
   },
