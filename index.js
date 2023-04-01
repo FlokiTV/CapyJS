@@ -1,4 +1,3 @@
-// import "./lib/express.js";
 import { $Manager } from "./src/index.js";
 
 const $ = new $Manager();

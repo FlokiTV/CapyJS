@@ -1,5 +1,5 @@
 import * as path from "path";
-import { $Ticker } from "./index.js";
+import { $Ticker, $Server } from "./index.js";
 const __dirname = process.cwd();
 /**
  * A class that handles loading and setup of a server adapter based on a configuration file.
@@ -7,7 +7,7 @@ const __dirname = process.cwd();
 export class $Manager {
   #onload;
   tick;
-  /** @type {import("./adapters").$Server} server*/
+  /** @type {$Server} */
   server;
   /**
    * Creates a new instance of the Manager class and reads in the configuration file.

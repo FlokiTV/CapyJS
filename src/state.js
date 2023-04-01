@@ -74,7 +74,7 @@ export class $State {
      * @callback onChange
      * @param {Array} changes - An array of changes.
      *
-     * @type {onChange} callback
+     * @type {onChange}
      */
     const callback = (changes) => {
       let _changes = [];
