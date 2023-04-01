@@ -1,19 +1,26 @@
 {
-  "dependencies": {
-    "@geckos.io/server": "^2.3.0",
-    "express": "^4.18.2",
-    "nodemon": "^2.0.22"
-  },
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build":"esbuild index.js --bundle --platform=node --format=cjs --loader:.node=copy --outdir=out",
+    "build:adapter":"esbuild adapters/geckos.js --bundle --platform=node --format=cjs --loader:.node=copy --outdir=out/adapters/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@geckos.io/server": "^2.3.0",
+    "@gullerya/object-observer": "^6.1.1",
+    "express": "^4.18.2",
+    "lodash-es": "^4.17.21",
+    "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "esbuild": "^0.17.14"
+  }
 }

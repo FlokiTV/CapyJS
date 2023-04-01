@@ -1,42 +1,10 @@
-import { ServerClock } from "./lib/serverClock.js";
-import { instance } from "./lib/geckosServer.js";
-import * as events from "./events.js";
-import express from 'express';
+// import "./lib/express.js";
+import { $Manager } from "./src/index.js";
 
-const io = instance(3000);
-const tick = new ServerClock(30, true);
-const game = {}
-global["game"] = game
-game.tick = tick
+const $ = new $Manager();
 
-function registerEventCallback(event, channel) {
-  if (event === "onConnection") return;
-  if (event === "onDisconnect") return;
-  if (event === "onTick") return;
-  const callback = events[event];
-  console.log("register event: " + event);
-  channel.on(event, (data) => {
-    callback(data, channel, io);
-  });
-}
-
-io.onConnection((channel) => {
-  events.onConnection(channel, io);
-  channel.onDisconnect(() => {
-    events.onDisconnect(channel, io);
-  });
-  for (const event in events) {
-    registerEventCallback(event, channel);
-  }
+$.onload(() => {
+  console.log("Server ready");
 });
-
-tick.onTick((delta) => {
-  events.onTick(delta, io);
-});
-
-const app = express();
-const port = 80;
-app.use(express.static("public"));
-app.listen(port, () => {
-  console.log(`app listening on port ${port}`);
-});
+export const $Server = $.server;
+export { $State, $Ticker } from "./src/index.js";
