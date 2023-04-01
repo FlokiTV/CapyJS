@@ -6,5 +6,6 @@ const $ = new $Manager();
 $.onload(() => {
   console.log("Server ready");
 });
+
 export const $Server = $.server;
 export { $State, $Ticker } from "./src/index.js";

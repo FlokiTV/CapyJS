@@ -72,6 +72,7 @@ export class $Server {
     if (script.onConnection) this.onConnection = script.onConnection;
     if (script.onDisconnect) this.onDisconnect = script.onDisconnect;
     if (script.onTick) this.onTick = script.onTick;
+    if (script.onInit) this.onInit = script.onInit;
     if (script.events) this.events = script.events;
     /**
      * The function called when setup is complete.
@@ -127,6 +128,7 @@ export class $Server {
    * @param {...any} args - The arguments to be passed to the event handler function.
    */
   emit(eventName = "", ...args) {}
+  listen() {}
 }
 
 /**

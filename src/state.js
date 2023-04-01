@@ -87,10 +87,12 @@ export class $State {
       }
       emitter.emit(`sync:${this.name}`, _changes);
     };
-    if (path) this.subscribe(path, callback);
-    else this.onChange(callback);
+    if (path) {
+      this.subscribe(path, callback);
+    } else this.onChange(callback);
     emitter.on(`sync:${this.name}:init`, () => {
-      emitter.emit(`sync:${this.name}:init`, this.get());
+      let init = path ? { [path]: this.get(path) } : this.get();
+      emitter.emit(`sync:${this.name}:init`, init);
     });
   }
   /**
@@ -100,7 +102,7 @@ export class $State {
    * @param {onChange} callback
    */
   subscribe(path, callback) {
-    Observable.observe(this.#state, callback, { path: path });
+    Observable.observe(this.#state, callback, { pathsOf: path });
   }
   /**
    * Subscribes to changes in the entire state object.

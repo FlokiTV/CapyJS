@@ -1,10 +1,12 @@
 import * as path from "path";
+import { $Ticker } from "./index.js";
 const __dirname = process.cwd();
 /**
  * A class that handles loading and setup of a server adapter based on a configuration file.
  */
 export class $Manager {
   #onload;
+  tick;
   /** @type {import("./adapters").$Server} server*/
   server;
   /**
@@ -22,6 +24,12 @@ export class $Manager {
       this.server = new Server(config.adapter.options);
       await this.server.setup(scriptPath);
       this.server.listen();
+      if (this.server.onInit) this.server.onInit(this.server);
+      if (this.server.onTick) {
+        let tick = this.config.tick || false;
+        this.tick = new $Ticker(tick.fps || 60, tick.autoStart || true);
+        this.tick.onTick(this.server.onTick);
+      }
       if (this.#onload) this.#onload();
     });
   }

@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "build":"esbuild index.js --bundle --platform=node --format=cjs --loader:.node=copy --outdir=out",
-    "build:adapter":"esbuild adapters/geckos.js --bundle --platform=node --format=cjs --loader:.node=copy --outdir=out/adapters/"
+    "build":"esbuild index.js --bundle --minify --platform=node --format=cjs --loader:.node=copy --outdir=dist",
+    "build:adapter":"esbuild adapters/geckos.js --bundle --minify --platform=node --format=cjs --loader:.node=copy --outdir=dist/adapters/",
+    "types": "npx -p typescript tsc index.js --declaration --allowJs --emitDeclarationOnly --outDir types"
   },
   "keywords": [],
   "author": "",
