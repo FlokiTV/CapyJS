@@ -1,13 +1,15 @@
 {
   "name": "capy-js",
   "version": "0.0.1",
-  "main": "index.js",
   "type": "module",
+  "main": "index.js",
+  "bin": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "build": "esbuild index.js --bundle --minify --platform=node --format=cjs --loader:.node=copy --outdir=dist",
-    "build:adapter": "esbuild adapters/geckos/index.js --bundle --minify --platform=node --format=cjs --loader:.node=copy --outdir=dist/adapters/geckos",
+    "build": "esbuild index.js --bundle --minify --platform=node --format=esm --loader:.node=copy --outdir=dist && npm i -g",
+    "build:adapter": "esbuild adapters/geckos/index.js --minify --platform=node --format=esm --outfile=adapters/geckos/index.dist.js",
+    "bundle:adapter": "esbuild adapters/geckos/index.js --bundle --minify --platform=node --format=esm --loader:.node=copy --outdir=dist/adapters/geckos",
     "types": "npx -p typescript tsc index.js --declaration --allowJs --emitDeclarationOnly --outDir types",
     "docs": "jsdoc src/adapters.js src/manager.js src/state.js src/ticker.js -d docs"
   },

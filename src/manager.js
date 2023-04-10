@@ -1,6 +1,10 @@
 import * as path from "path";
+import { readFileSync } from "fs";
+import { fileURLToPath } from "url";
 import { $Ticker, $Server } from "./index.js";
-const __dirname = process.cwd();
+const __rootdir = process.cwd();
+const __filedir = path.dirname(fileURLToPath(import.meta.url));
+
 /**
  * A class that handles loading and setup of a server adapter based on a configuration file.
  */
@@ -13,14 +17,28 @@ export class $Manager {
    * Creates a new instance of the Manager class and reads in the configuration file.
    */
   constructor() {
+    let header = readFileSync(path.join(__filedir, "header"), {
+      encoding: "utf-8",
+    });
+    console.log(header);
     console.log("[capy:manager] reading config");
-    let cfgPath = path.join(__dirname, "config.mjs");
+    let cfgPath = path.join(__rootdir, "config.mjs");
     import(`file://${cfgPath}`).then(async (e) => {
       let config = e.default;
       this.config = config;
       console.log("[capy:manager] loading adapter " + config.adapter.path);
-      let adapterPath = path.join(__dirname, config.adapter.path);
-      let scriptPath = path.join(__dirname, config.script);
+      /** @type {string} */
+      let adapterPath = config.adapter.path;
+      if (adapterPath.includes("/")) {
+        adapterPath = path.join(__rootdir, config.adapter.path);
+      } else {
+        adapterPath = path.join(
+          __filedir,
+          "../adapters/" + config.adapter.path + "/index.js"
+        );
+      }
+
+      let scriptPath = path.join(__rootdir, config.script);
       const { Server } = await import(`file://${adapterPath}`);
       console.log("[capy:manager] creating server");
       this.server = new Server(config.adapter.options);

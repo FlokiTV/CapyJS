@@ -1,5 +1,5 @@
+#! /usr/bin/env node
 import { $Manager } from "./src/index.js";
-
 const $ = new $Manager();
 
 $.onload(() => {
