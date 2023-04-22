@@ -61,7 +61,7 @@ export class $Ticker {
 
   /**
    * Creates a new Ticker instance.
-   * 
+   *
    * @param {number} fps - Frames per second (default: 60).
    * @param {boolean} autoStart - Automatically start the ticker (default: true).
    */
@@ -71,7 +71,7 @@ export class $Ticker {
 
   /**
    * Start the clock.
-   * 
+   *
    * @param {number} fps - Frames per second (default: 60).
    */
   start(fps = 60) {
@@ -81,44 +81,44 @@ export class $Ticker {
     this.startTime = Date.now();
     this.#loop();
   }
-  
+
   /**
    * Stop the clock.
    */
   stop() {
     this.#isRunning = false;
   }
-  
+
   /**
    * Check if the clock is running.
-   * 
+   *
    * @returns {boolean} - True if the clock is running, false otherwise.
    */
   isRunning() {
     return this.#isRunning;
   }
-  
+
   /**
    * Get the last delta value.
-   * 
+   *
    * @returns {number} - The last delta value.
    */
   getDelta() {
     return this.#delta;
   }
-  
+
   /**
    * Get the total elapsed time since the clock started.
-   * 
+   *
    * @returns {number} - The total elapsed time.
    */
   getElapsedTime() {
     return Date.now() - this.startTime;
   }
-  
+
   /**
    * Set a callback function to be called on each tick.
-   * 
+   *
    * @param {function} onTickCallback - The callback function.
    */
   onTick(onTickCallback) {
@@ -127,7 +127,7 @@ export class $Ticker {
 
   /**
    * The ticker loop function.
-   * 
+   *
    * @private
    */
   #loop() {
@@ -152,11 +152,17 @@ export class $Ticker {
       }, this.tickLengthMs);
     }
   }
-  /** Disable high accuracy to save some cpu power. This is very useful while developing. */
+  /**
+   * Disable high accuracy to save some cpu power.
+   * This is very useful while developing.
+   * */
   disableHighAccuracy() {
     this.#highAccuracy = false;
   }
-  /** Enable hight accuracy. Much more precise but uses much more cpu power. */
+  /**
+   * Enable hight accuracy.
+   * Much more precise but uses much more cpu power.
+   * */
   enableHighAccuracy() {
     this.#highAccuracy = true;
   }

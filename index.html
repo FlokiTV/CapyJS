@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CapyJS Client</title>
+    <script src="./dist/client/geckos.js"></script>
+    <script type="module">
+      import { Capy } from "./dist/client/index.js";
+      import { adapter } from "./adapters/geckos/index.client.js";
+      const capy = new Capy("http://127.0.0.1:3000/");
+      capy.use(adapter);
+      /*
+         Game
+       */
+      const pId = (id) => `player_${id}`;
+      const updatePlayer = (id, data) => {
+        let { x, y } = data;
+        let el = document.getElementById(pId(id));
+        el.setAttribute("style", `--x:${x}px; --y:${y}px;`);
+      };
+      const rmPlayer = (id) => {
+        let el = document.getElementById(pId(id));
+        el.remove();
+      };
+      const addPlayer = (id) => {
+        if (document.getElementById(pId(id))) return;
+        let el = document.createElement("div");
+        el.id = pId(id);
+        el.classList.add("player");
+        document.body.appendChild(el);
+        updatePlayer(id, { x: 0, y: 0 });
+      };
+      const GAME = () => {
+        // capy.sync("players"); // sync state without subscribe
+        // capy.on("sync:players", (data) => {}); // raw sync event
+        // raw init sync event, run before set state
+        capy.on("sync:players:init", (state) => {
+          for (const playerId in state) {
+            addPlayer(playerId);
+            const player = state[playerId];
+            const { x, y } = player;
+            updatePlayer(playerId, { x, y });
+          }
+        });
+
+        capy.subscribe("players", ({ type, path, value }) => {
+          const playerId = path[0];
+          if (type === "insert") {
+            addPlayer(playerId);
+          }
+          if (type === "update") {
+            const { x, y } = capy.state("players", playerId);
+            updatePlayer(playerId, { x, y });
+          }
+          if (type === "delete") {
+            rmPlayer(playerId);
+          }
+        });
+        const keyState = {
+          x: 0,
+          y: 0,
+          keys: {},
+          once(key, check, action) {
+            if (key == check) {
+              let isDown = action == "down" && !this.pressed(check);
+              let isUp = action == "up" && this.pressed(check);
+              if (isDown || isUp) {
+                if (isDown) this.down(key);
+                if (isUp) this.up(key);
+                return true;
+              }
+            }
+          },
+          pressed(key) {
+            return this.keys[key];
+          },
+          down(key) {
+            this.keys[key] = true;
+          },
+          up(key) {
+            this.keys[key] = false;
+          },
+        };
+        document.body.onkeydown = ({ key }) => {
+          if (keyState.once(key, "a", "down")) keyState.x -= 1;
+          if (keyState.once(key, "d", "down")) keyState.x += 1;
+          if (keyState.once(key, "w", "down")) keyState.y -= 1;
+          if (keyState.once(key, "s", "down")) keyState.y += 1;
+          emitKeys(key);
+        };
+        document.body.onkeyup = ({ key }) => {
+          if (keyState.once(key, "a", "up")) keyState.x += 1;
+          if (keyState.once(key, "d", "up")) keyState.x -= 1;
+          if (keyState.once(key, "w", "up")) keyState.y += 1;
+          if (keyState.once(key, "s", "up")) keyState.y -= 1;
+          emitKeys(key);
+        };
+        const emitKeys = (key) => {
+          const check = key == "a" || key == "d" || key == "w" || key == "s";
+          if (check) {
+            let { x, y } = keyState;
+            let data = `${x}:${y}`;
+            capy.emit("move", data);
+          }
+        };
+      };
+
+      capy.connect(GAME);
+    </script>
+    <style>
+      body {
+        margin: 0;
+        position: relative;
+      }
+      .player {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: blueviolet;
+        left: var(--x);
+        top: var(--y);
+      }
+    </style>
+  </head>
+  <body></body>
+</html>

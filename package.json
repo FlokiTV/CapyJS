@@ -7,9 +7,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "build": "esbuild index.js --bundle --minify --platform=node --format=esm --loader:.node=copy --outdir=dist && npm i -g",
+    "build:server": "esbuild index.js --bundle --minify --platform=node --format=esm --loader:.node=copy --outdir=dist && npm i -g",
+    "build:client:adapters": "esbuild ./src/adapters.js --bundle --platform=browser --format=esm --outdir=dist/client/",
+    "watch:client": "esbuild src/client/index.js --watch --bundle --minify --platform=browser --format=esm --outdir=dist/client/",
+    
     "build:adapter": "esbuild adapters/geckos/index.js --minify --platform=node --format=esm --outfile=adapters/geckos/index.dist.js",
+    "build:adapter:client": "esbuild adapters/geckos/client/index.js --bundle --minify --platform=browser --format=esm --outfile=adapters/geckos/index.client.js",
     "bundle:adapter": "esbuild adapters/geckos/index.js --bundle --minify --platform=node --format=esm --loader:.node=copy --outdir=dist/adapters/geckos",
+    
     "types": "npx -p typescript tsc index.js --declaration --allowJs --emitDeclarationOnly --outDir types",
     "docs": "jsdoc src/adapters.js src/manager.js src/state.js src/ticker.js -d docs"
   },

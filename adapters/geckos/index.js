@@ -1,5 +1,5 @@
 import geckos, { iceServers } from "@geckos.io/server";
-import { $Client, $Server } from "../../src/index.js";
+import { $Client, $Server } from "../../src/adapters.js";
 
 class Client extends $Client {
   #client;

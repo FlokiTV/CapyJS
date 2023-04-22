@@ -1,4 +1,6 @@
-import { $State, $Ticker } from "./index.js";
+import { $Ticker } from "./ticker.js";
+import { $State } from "./state.js";
+
 
 /**
  * Represents a server that can manage client connections and events.
