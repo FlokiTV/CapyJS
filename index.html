@@ -47,17 +47,18 @@
 
         capy.subscribe("players", ({ type, path, value }) => {
           const playerId = path[0];
-          if (type === "insert") {
+          if (type === "insert") { // onAdd
             addPlayer(playerId);
           }
-          if (type === "update") {
+          if (type === "update") { // onChange
             const { x, y } = capy.state("players", playerId);
             updatePlayer(playerId, { x, y });
           }
-          if (type === "delete") {
+          if (type === "delete") { // onRemove
             rmPlayer(playerId);
           }
         });
+
         const keyState = {
           x: 0,
           y: 0,

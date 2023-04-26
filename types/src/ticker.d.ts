@@ -67,9 +67,15 @@ export class $Ticker {
      * @param {function} onTickCallback - The callback function.
      */
     onTick(onTickCallback: Function): void;
-    /** Disable high accuracy to save some cpu power. This is very useful while developing. */
+    /**
+     * Disable high accuracy to save some cpu power.
+     * This is very useful while developing.
+     * */
     disableHighAccuracy(): void;
-    /** Enable hight accuracy. Much more precise but uses much more cpu power. */
+    /**
+     * Enable hight accuracy.
+     * Much more precise but uses much more cpu power.
+     * */
     enableHighAccuracy(): void;
     #private;
 }

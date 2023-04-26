@@ -3,8 +3,8 @@
  */
 export class $Manager {
     tick: any;
-    /** @type {import("./adapters").$Server} server*/
-    server: import("./adapters").$Server;
+    /** @type {$Server} */
+    server: $Server;
     config: any;
     /**
      * Sets a callback function to be executed after the initial setup has completed.
@@ -13,3 +13,4 @@ export class $Manager {
     onload(callback: Function): void;
     #private;
 }
+import { $Server } from "./index.js";
