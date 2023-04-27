@@ -34,8 +34,8 @@ export const adapter = (url = "http://127.0.0.1:3000/", callback) => {
   });
   client.onConnect((error) => {
     let channel = new Client(client);
-    callback(channel);
+    callback(channel, error);
   });
 };
 
-window.CapyAdapter = adapter
+window.CapyAdapter = adapter;

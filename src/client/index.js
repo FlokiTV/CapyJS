@@ -15,8 +15,13 @@ export class Capy {
     this.adapter = connectFn;
   }
   connect(callback = null) {
-    this.adapter(this.url, (client) => {
+    this.adapter(this.url, (client, error) => {
+      if (error) throw new Error(error);
       this.client = client;
+      this.isConnected = true;
+      client.onDisconnect(() => {
+        this.isConnected = false;
+      });
       if (typeof callback === "function") {
         callback(this);
       }
@@ -52,9 +57,11 @@ export class Capy {
     this.on(`sync:${stateName}`, (datas) => {
       for (const data of datas) {
         _.set(this.states[stateName], data.path, data.value);
-        for (const ev of this.subscribes[stateName]) {
-          ev(data);
-        }
+        // todo: validate array before iteration
+        if (this.subscribes[stateName])
+          for (const ev of this.subscribes[stateName]) {
+            ev(data);
+          }
       }
     });
   }
