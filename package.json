@@ -9,7 +9,9 @@
     "dev": "nodemon index.js",
     "capy:bundle:server": "esbuild index.js --bundle --minify --platform=node --format=esm --loader:.node=copy --outdir=dist && npm i -g",
     "capy:build:client:adapters": "esbuild ./src/adapters.js --bundle --platform=browser --format=esm --outdir=dist/client/",
-    "capy:watch:client": "esbuild src/client/index.js --watch --bundle --minify --platform=browser --format=esm --outdir=dist/client/",
+    "capy:watch:client": "esbuild src/client/index.js --watch --bundle --minify --platform=browser --format=esm --outfile=dist/client/index.mjs",
+    "capy:build:client:esm": "esbuild src/client/index.js --bundle --minify --platform=browser --format=esm --outfile=dist/client/index.mjs",
+    "capy:build:client": "esbuild src/client/index.js --bundle --minify --platform=browser --outdir=dist/client/",
     
     "adapter:build:server": "esbuild adapters/geckos/index.js --minify --platform=node --format=esm --outfile=adapters/geckos/index.dist.js",
     "adapter:build:client": "esbuild adapters/geckos/client/index.js --bundle --minify --platform=browser --format=esm --outfile=adapters/geckos/index.client.js",

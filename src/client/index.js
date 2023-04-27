@@ -1,7 +1,5 @@
 import * as _ from "lodash-es";
 
-window._ = _;
-
 export class Capy {
   constructor(url = "") {
     this.url = url;
@@ -61,3 +59,6 @@ export class Capy {
     });
   }
 }
+
+window._ = _;
+window.Capy = Capy;
