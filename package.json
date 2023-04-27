@@ -14,7 +14,8 @@
     "capy:build:client": "esbuild src/client/index.js --bundle --minify --platform=browser --outdir=dist/client/",
     
     "adapter:build:server": "esbuild adapters/geckos/index.js --minify --platform=node --format=esm --outfile=adapters/geckos/index.dist.js",
-    "adapter:build:client": "esbuild adapters/geckos/client/index.js --bundle --minify --platform=browser --format=esm --outfile=adapters/geckos/index.client.js",
+    "adapter:build:client": "esbuild adapters/geckos/client/index.js --bundle --minify --platform=browser --outfile=adapters/geckos/index.client.js",
+    "adapter:build:client:esm": "esbuild adapters/geckos/client/index.js --bundle --minify --platform=browser --format=esm --outfile=adapters/geckos/index.client.mjs",
     "adapter:bundle:server": "esbuild adapters/geckos/index.js --bundle --minify --platform=node --format=esm --loader:.node=copy --outdir=dist/adapters/geckos",
     
     "types": "npx -p typescript tsc index.js --declaration --allowJs --emitDeclarationOnly --outDir types",
