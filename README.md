@@ -8,7 +8,7 @@ Experience Hassle-Free Multiplayer Server Creation with CapyJS
 
 # install
 
-` npm i FlokiTV/CapyJS`
+`npm i FlokiTV/CapyJS`
 
 # start
 
@@ -52,7 +52,7 @@ export const events = {
 
 ```
 # adapters
-the adapters are the brigth between Capy to a any communication logic/protocol
+the adapters are the bridge between Capy to a any communication logic/protocol
 
 ## geckos adapter
 
