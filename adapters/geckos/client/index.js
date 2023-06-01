@@ -1,5 +1,6 @@
 import { $Client } from "../../../src/adapters.js";
-import "./geckos.js";
+import { geckos } from "@geckos.io/client";
+
 class Client extends $Client {
   #client;
   constructor(client) {
