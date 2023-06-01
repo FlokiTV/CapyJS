@@ -67,5 +67,7 @@ export class Capy {
   }
 }
 
-window._ = _;
-window.Capy = Capy;
+if(typeof window != "undefined"){
+  window._ = _;
+  window.Capy = Capy;
+}
