@@ -38,4 +38,4 @@ export const adapter = (url = "http://127.0.0.1:3000/", callback) => {
   });
 };
 
-window.CapyAdapter = adapter;
+if (typeof window != "undefined") window.CapyAdapter = adapter;
