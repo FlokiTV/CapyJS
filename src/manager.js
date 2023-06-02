@@ -39,7 +39,8 @@ export class $Manager {
         try {
           readFileSync(adapterPath);
         } catch (error) {
-          console.log(error);
+          // console.log(error);
+          console.log(`loading server/index.min.mjs`)
           adapterPath = path.join(
             __filedir,
             "../adapters/" + config.adapter.path + "/server/index.min.mjs"
