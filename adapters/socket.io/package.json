@@ -1,20 +1,20 @@
 {
-  "name": "capy-geckos-adapter",
-  "version": "0.0.1",
-  "type": "module",
+  "name": "capy-socket-io-adapter",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:client:esm": "esbuild client/index.js --bundle --minify --platform=browser --format=esm --outfile=client/index.min.mjs",
-    "build:server:esm": "esbuild server/index.js --minify --platform=node --format=esm --outfile=server/index.min.mjs"
+    "build:server:esm": "esbuild server/index.js --bundle --minify --platform=node --format=esm --outfile=server/index.min.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@geckos.io/client": "^2.3.1",
-    "@geckos.io/server": "^2.3.0"
+    "socket.io": "^4.6.2",
+    "socket.io-client": "^4.6.2"
   },
   "devDependencies": {
     "esbuild": "^0.17.19"

@@ -5,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CapyJS Client</title>
-    <script src="./adapters/geckos/client/geckos.js"></script>
     <script type="module">
-      import { Capy } from "./dist/client/index.js";
-      import { adapter } from "./adapters/geckos/index.client.js";
+      import { Capy } from "./dist/client/index.mjs";
+      import { adapter } from "./adapters/socket.io/client/index.min.mjs";
       const capy = new Capy("http://127.0.0.1:3000/");
       capy.use(adapter);
       /*

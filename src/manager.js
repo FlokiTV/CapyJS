@@ -1,5 +1,5 @@
 import * as path from "path";
-import { readFileSync } from "fs";
+import { readFileSync, existsSync } from "fs";
 import { fileURLToPath } from "url";
 import { $Ticker, $Server } from "./index.js";
 const __rootdir = process.cwd();
@@ -36,6 +36,12 @@ export class $Manager {
           __filedir,
           "../adapters/" + config.adapter.path + "/index.js"
         );
+        if (!existsSync(adapterPath)) {
+          adapterPath = path.join(
+            __filedir,
+            "../adapters/" + config.adapter.path + "/server/index.mjs"
+          );
+        }
       }
 
       let scriptPath = path.join(__rootdir, config.script);
