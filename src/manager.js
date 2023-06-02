@@ -36,7 +36,10 @@ export class $Manager {
           __filedir,
           "../adapters/" + config.adapter.path + "/index.js"
         );
-        if (!existsSync(adapterPath)) {
+        try {
+          readFileSync(adapterPath);
+        } catch (error) {
+          console.log(error);
           adapterPath = path.join(
             __filedir,
             "../adapters/" + config.adapter.path + "/server/index.mjs"
