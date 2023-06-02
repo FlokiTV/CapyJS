@@ -42,7 +42,7 @@ export class $Manager {
           console.log(error);
           adapterPath = path.join(
             __filedir,
-            "../adapters/" + config.adapter.path + "/server/index.mjs"
+            "../adapters/" + config.adapter.path + "/server/index.min.mjs"
           );
         }
       }
