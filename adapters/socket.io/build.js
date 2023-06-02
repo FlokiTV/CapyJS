@@ -9,6 +9,7 @@ await esbuild.build({
   platform: "node",
   banner: {
     js: `
+        import * as path from 'path';
         import { fileURLToPath } from 'url';
         import { createRequire as topLevelCreateRequire } from 'module';
         const require = topLevelCreateRequire(import.meta.url);
